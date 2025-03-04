@@ -1,0 +1,657 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  color: #4b5e91;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-icon:hover {
+  color: #2b6cb0;
+  transform: translateY(-2px);
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  letter-spacing: -0.025em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: #4b5e91;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #2b6cb0;
+}
+
+.user-profile {
+  color: #2b6cb0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  background: #e6f0fa;
+  border-radius: 12px;
+  border: 1px solid #bfdbfe;
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Form Containers */
+.form-container {
+  max-width: 32rem;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.form-container h2,
+.form-container h3 {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.booking-btn {
+  background: linear-gradient(135deg, #c084fc, #9333ea);
+}
+
+.booking-btn:hover {
+  background: linear-gradient(135deg, #9333ea, #7e22ce);
+}
+
+/* Meeting Rooms */
+.meeting-rooms-container {
+  max-width: 64rem;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.meeting-rooms-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.booked-rooms h3,
+.room-selection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.booked-rooms ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.booked-rooms li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.booked-rooms li:hover {
+  background: #f9fafb;
+}
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.room-card {
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.room-card.selected {
+  background: #e6f0fa;
+  border: 2px solid #2b6cb0;
+}
+
+.room-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.room-card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.room-bookings {
+  margin-bottom: 2rem;
+}
+
+.room-bookings h4 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.room-bookings ul {
+  list-style: none;
+}
+
+.room-bookings li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toggle Button */
+.toggle-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+}
+
+/* Booking List Enhancements */
+.current-booking {
+  background: #fffbeb;
+  border-left: 4px solid #fbbf24;
+  font-weight: 500;
+}
+
+.current-badge {
+  margin-left: 0.75rem;
+  background: #fbbf24;
+  color: #1f2937;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Room Card Enhancements */
+.booked-now {
+  background: #fee2e2;
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.booked-badge {
+  display: inline-block;
+  background: #f87171;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Edit Button */
+.booking-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+}
+
+/* Users Page */
+.users-container {
+  max-width: 64rem;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.users-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.users-table th,
+.users-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.users-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+  position: sticky;
+  top: 0;
+}
+
+.users-table td {
+  background: #fff;
+}
+
+.users-table tr:hover td {
+  background: #f9fafb;
+}
+
+.users-table td:last-child {
+  text-align: center;
+}
+.rooms-container {
+  max-width: 64rem;
+  margin: 5rem auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.rooms-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.rooms-list h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.rooms-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.rooms-table th,
+.rooms-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rooms-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+  position: sticky;
+  top: 0;
+}
+
+.rooms-table td {
+  background: #fff;
+}
+
+.rooms-table tr:hover td {
+  background: #f9fafb;
+}
+
+.rooms-table td:last-child {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+/* Date Picker Input */
+.date-picker-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: none; /* Remove default border */
+  border-radius: 10px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ffffff, #f1f5f9); /* Subtle gradient */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); /* Neumorphic inset */
+  outline: none;
+  transition: all 0.3s ease;
+  color: #1f2937;
+}
+
+.date-picker-input:focus {
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.3), inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  background: #ffffff; /* Brighten on focus */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* React Datepicker Popup */
+.react-datepicker {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95); /* Glassmorphism */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  overflow: hidden; /* Ensure rounded corners clip content */
+}
+
+.react-datepicker__header {
+  background: linear-gradient(135deg, #3b82f6, #2b6cb0); /* Gradient header */
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  padding: 0.75rem;
+  border-bottom: none;
+}
+
+.react-datepicker__current-month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.react-datepicker__day-name {
+  color: #e6f0fa; /* Lighter shade for day names */
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+}
+
+.react-datepicker__day {
+  color: #1f2937;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.react-datepicker__day:hover {
+  background: #e6f0fa;
+  border-radius: 50%;
+  color: #2b6cb0;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background: #2b6cb0;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+  background: #2563eb;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.react-datepicker__time-list {
+  padding: 0.5rem 0;
+}
+
+.react-datepicker__time-list-item {
+  padding: 0.5rem 1rem;
+  color: #1f2937;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.react-datepicker__time-list-item:hover {
+  background: #f1f5f9;
+}
+
+.react-datepicker__time-list-item--selected {
+  background: #2b6cb0 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Navigation Arrows */
+.react-datepicker__navigation {
+  top: 12px;
+  border: 0.45rem solid transparent;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: #e6f0fa;
+}
+
+.react-datepicker__navigation--previous:hover {
+  border-right-color: #bfdbfe;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: #e6f0fa;
+}
+
+.react-datepicker__navigation--next:hover {
+  border-left-color: #bfdbfe;
+}
